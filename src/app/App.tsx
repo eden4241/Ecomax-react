@@ -3,7 +3,7 @@ import '../css/App.css';
 import { Box, Button, Container, Stack, Typography } from '@mui/material';
 
 function App() {
-  return <Container maxWidth="sm">
+  return <Container sx={{ backgroundColor: 'orange' }}>
     <Stack flexDirection="column">
       <Box sx={{my: 2}}>
         <Typography variant="h4" component={"h4"}>Hello World</Typography>

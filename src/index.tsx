@@ -6,8 +6,8 @@ import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
-import theme from './theme';
 import './css/index.css';
+import theme from './app/MaterialTheme';
 
 const container = document.getElementById('root') as HTMLElement;
 const root = ReactDOM.createRoot(container);
