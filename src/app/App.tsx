@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/App.css';
+import '../css/app.css';
 import { Box, Button, Container, Stack, Typography } from '@mui/material';
 import { Link, Route, Switch, useLocation } from 'react-router-dom';
 
