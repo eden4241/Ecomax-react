@@ -1,0 +1,174 @@
+.home-navbar {
+    width: 100%;
+    height: 744px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(209, 212, 217, 1);
+    background-size: cover;
+}
+
+.home-navbar .navbar-top-section {
+    background: white;
+    width: 100%;
+}
+
+
+
+.home-navbar a {
+    text-decoration: none;
+}
+
+.home-navbar .hover-line {
+    font-family: Nunito;
+    font-style: normal;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0%;
+    text-align: left;
+    color: rgba(7, 28, 31, 1);
+    z-index: 100;
+    position: relative;
+}
+
+.home-navbar .underline {
+    display: block;
+    content: '';
+    color: rgba(118, 167, 19, 1);
+    border-bottom: solid 2px rgba(118, 167, 19, 1);
+}
+
+.home-navbar .hover-line {
+    position: relative;
+}
+
+.home-navbar .hover-line:after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: solid 2px rgba(118, 167, 19, 1);
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    transition: transform 250ms ease-in-out;
+}
+
+.home-navbar .hover-line:hover:after {
+    transform: scaleX(1);
+}
+
+.home-navbar .ecomax-logo-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-bottom: 12px;
+    color: rgba(11, 30, 51, 1);
+
+    font-family: Josefin Sans;
+    font-style: Bold;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.home-navbar .logo-link {
+    text-decoration: none;
+}
+
+.home-navbar .login-button {
+    background-color: rgba(118, 167, 19, 1) !important;
+    color: white !important;
+}
+
+.home-navbar .signup-button {
+    background-color: rgba(118, 167, 19, 1) !important;
+    color: white !important;
+    width: 154.83px !important;
+    height: 50.07px !important;
+}
+
+.home-navbar .user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 24px;
+}
+
+.home-navbar .hero-content-section {
+    padding: 40px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-navbar .hero-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.home-navbar .hero-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: contain;
+}
+
+.home-navbar .genuine-products-text {
+    display: flex;
+    align-items: center;
+    font-family: Nunito;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(7, 28, 31, 0.7);
+    margin-bottom: 16px;
+}
+
+.home-navbar .genuine-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.home-navbar .hero-title {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-family: Josefin Sans;
+    font-weight: 700;
+    color: rgba(7, 28, 31, 1);
+    line-height: 1.2;
+}
+
+.home-navbar .hero-title-line1 {
+    display: block;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.home-navbar .hero-title-line2 {
+    display: block;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+@media (max-width: 768px) {
+    .home-navbar .hero-title-line1,
+    .home-navbar .hero-title-line2 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-navbar .hero-title-line1,
+    .home-navbar .hero-title-line2 {
+        font-size: 32px;
+    }
+}
