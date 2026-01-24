@@ -2,7 +2,6 @@ import { createTheme } from '@mui/material/styles';
 import { common } from '@mui/material/colors';
 import shadow from './shadow';
 import typography from './typography';
-import { maxWidth } from '@mui/system';
 
 /**
  * LIGHT THEME (DEFAULT)
@@ -15,7 +14,7 @@ const light = {
 			paper: common.white,
 		},
 		primary: {
-			contrastText: '#6BBE45',
+			contrastText: 'rgba(255, 255, 255, 1)',
 			main: '#A3D65C',
 		},
 		secondary: {
@@ -23,7 +22,7 @@ const light = {
 			main: '#6BBE45',
 		},
 		text: {
-			primary: '#000000',
+			primary: 'rgba(255, 255, 255, 1)',
 			secondary: '#6BBE45',
 			dark: common.black,
 		},

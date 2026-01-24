@@ -1,8 +1,8 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import { flushSync } from "react-dom";
 import { NavLink } from "react-router-dom";
+import Basket from "./Basket";
 
-export function HomeNavbar() {
+export default function HomeNavbar() {
     const authMember = null;
     return <div className="home-navbar">
         <div className="navbar-top-section ">
@@ -51,8 +51,7 @@ export function HomeNavbar() {
                     <Box>
                         <NavLink to="/help" className="hover-line" activeClassName="underline">Help</NavLink>
                     </Box>
-                    {/* BASKET */}
-
+                    <Basket />
                     {!authMember ? (
                         <Button variant="contained" className="login-button">
                             Login
@@ -60,6 +59,7 @@ export function HomeNavbar() {
                     ) : (<img
                         className="user-image"
                         src="/icons/default-user.svg"
+                        alt="Default user"
                         aria-haspopup={"true"} />)}
                 </Stack>
             </Stack>
@@ -82,7 +82,7 @@ export function HomeNavbar() {
                     </Button>
                 </Stack>
                 <Stack className="hero-image-container">
-                    <img src="/img/banner2.png" alt="Hero image" className="hero-image" />
+                    <img src="/img/banner2.png" alt="Hero" className="hero-image" />
                 </Stack>
             </Stack>
         </Container>

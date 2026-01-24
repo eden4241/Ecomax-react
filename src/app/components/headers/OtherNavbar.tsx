@@ -1,7 +1,8 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { NavLink, useLocation } from "react-router-dom";
+import Basket from "./Basket";
 
-export function OtherNavbar() {
+export default function OtherNavbar() {
     const authMember = null;
     const location = useLocation();
     const pageTitle = location.pathname === '/products' ? 'Shop' : location.pathname.split('/').pop() || 'Page';
@@ -53,8 +54,7 @@ export function OtherNavbar() {
                         <Box>
                             <NavLink to="/help" className="hover-line" activeClassName="underline">Help</NavLink>
                         </Box>
-                        {/* BASKET */}
-
+                        <Basket />
                         {!authMember ? (
                             <Button variant="contained" className="login-button" >
                                 Login
@@ -62,6 +62,7 @@ export function OtherNavbar() {
                         ) : (<img
                             className="user-image"
                             src="/icons/default-user.svg"
+                            alt="Default user"
                             aria-haspopup={"true"} />)}
                     </Stack>
                 </Stack>
