@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 export function HomeNavbar() {
     const authMember = null;
     return <div className="home-navbar">
-        <div className="navbar-top-section">
+        <div className="navbar-top-section ">
             <Container sx={{ mt: "55px", height: "102px" }}>
             <Stack
                 sx={{ height: "102px" }}

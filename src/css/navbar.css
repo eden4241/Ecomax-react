@@ -160,6 +160,7 @@
 }
 
 @media (max-width: 768px) {
+
     .home-navbar .hero-title-line1,
     .home-navbar .hero-title-line2 {
         font-size: 40px;
@@ -167,8 +168,132 @@
 }
 
 @media (max-width: 480px) {
+
     .home-navbar .hero-title-line1,
     .home-navbar .hero-title-line2 {
         font-size: 32px;
     }
+}
+
+/* Other Navbar Styles */
+.other-navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.other-navbar .navbar-top-section {
+    background: white;
+    width: 100%;
+}
+
+.other-navbar .bottom-section {
+    background: rgba(218, 217, 222, 1);
+    background-size: cover;
+    width: 100%;
+    height: 433.01px;
+    padding: 60px 0;
+    position: relative;
+}
+
+.other-navbar .page-title-section {
+    margin-top: 120px;
+    align-items: flex-start;
+}
+
+.other-navbar .page-title {
+    width: 119px;
+    height: 50px;
+    color: rgba(35, 35, 35, 1);
+
+    font-family: Josefin Sans;
+    font-style: Bold;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.other-navbar .breadcrumb {
+    width: 114px;
+    height: 25px;
+    color: rgba(19, 51, 68, 1);
+    font-family: Nunito;
+    font-style: Regular;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+
+.other-navbar a {
+    text-decoration: none;
+}
+
+.other-navbar .hover-line {
+    font-family: Nunito;
+    font-style: normal;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0%;
+    text-align: left;
+    color: rgba(7, 28, 31, 1);
+    position: relative;
+}
+
+.other-navbar .hover-line:after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: solid 2px rgba(118, 167, 19, 1);
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    transition: transform 250ms ease-in-out;
+}
+
+.other-navbar .hover-line:hover:after {
+    transform: scaleX(1);
+}
+
+.other-navbar .underline {
+    border-bottom: solid 2px rgba(118, 167, 19, 1);
+}
+
+.other-navbar .ecomax-logo-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-bottom: 12px;
+    color: rgba(11, 30, 51, 1);
+    font-family: Josefin Sans;
+    font-style: Bold;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.other-navbar .logo-link {
+    text-decoration: none;
+}
+
+.other-navbar .user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+.other-navbar .login-button {
+    background-color: rgba(118, 167, 19, 1) !important;
+    color: white !important;
 }
