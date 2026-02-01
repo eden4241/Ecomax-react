@@ -39,10 +39,11 @@ export default function OtherNavbar(props: OtherNavbarProps) {
     <div className="other-navbar">
       <Container className="navbar-container">
         <Stack className="menu">
-          <Box>
+        <Box className="brand-container">
             <NavLink to={"/"}>
-              <img className="brand-logo" src="/icons/burak.svg" />
+              <img className="brand-logo" src="/icons/ecomax.svg" alt="Ecomax" />
             </NavLink>
+              <span className="brand-text">Ecomax</span>
           </Box>
           <Stack className="links">
             <Box className={"hover-line"}>
@@ -50,7 +51,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
             </Box>
             <Box className={"hover-line"}>
               <NavLink to={"/products"} activeClassName={"underline"}>
-                Products
+                Shop
               </NavLink>
             </Box>
             {authMember ? (

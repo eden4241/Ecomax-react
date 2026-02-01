@@ -49,13 +49,16 @@ export default function HomeNavbar(props: HomeNavbarProps) {
   //Handlers
 
   return (
+    
     <div className="home-navbar">
+      
       <Container className="navbar-container">
         <Stack className="menu">
-          <Box>
+          <Box className="brand-container">
             <NavLink to={"/"}>
-              <img className="brand-logo" src="/icons/burak.svg" />
+              <img className="brand-logo" src="/icons/ecomax.svg" alt="Ecomax" />
             </NavLink>
+              <span className="brand-text">Ecomax</span>
           </Box>
           <Stack className="links">
             <Box className={"hover-line"}>
@@ -65,7 +68,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
             </Box>
             <Box className={"hover-line"}>
               <NavLink to={"/products"} activeClassName={"underline"}>
-                Products
+                Shop
               </NavLink>
             </Box>
             {authMember ? (
@@ -111,7 +114,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
                 src={
                   authMember?.memberImage
                     ? `${serverApi}/${authMember?.memberImage}`
-                    : "/icons/default-user.svg"
+                    : "/icons/user.svg"
                 }
                 aria-haspopup={"true"}
                 onClick={handleLogoutClick}
@@ -164,9 +167,12 @@ export default function HomeNavbar(props: HomeNavbarProps) {
         </Stack>
         <Stack className="header-frame">
           <Stack className="detail">
-            <Box className="head-main-txt">World's Most Delicious Cousine</Box>
-            <Box className="wel-txt">The Choice, not just a choice</Box>
-            <Box className="service-txt">24 hours service</Box>
+            <Box className="head-main-txt">
+              <img src="/icons/herb.svg" alt="Burger" />
+              <span>100% Genuine Products</span>
+              </Box>
+            <Box className="wel-txt">Tasty & Healthy</Box>
+            <Box className="service-txt">Organic Food</Box>
             <Box className="signup">
               {!authMember ? (
                 <Button
@@ -185,5 +191,8 @@ export default function HomeNavbar(props: HomeNavbarProps) {
         </Stack>
       </Container>
     </div>
+
+    
+    
   );
 }
