@@ -1,0 +1,391 @@
+.order-page {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.order-page .order-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.order-page .order-container .order-left {
+  width: 821px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-page .order-container .order-left .order-nav-frame {
+  width: 679px;
+  height: 49px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.order-page .order-left .order-nav-frame .table-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-page .order-container .order-left .order-main-content {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.order-page .order-main-box {
+  position: relative;
+  width: 100%;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  box-shadow: 14px 14px 4px 0px rgba(188, 188, 191, 1),
+    inset 0px 0px 9px 14px rgba(211, 211, 231, 1),
+    inset 0px 4px 16px 0px rgba(242, 189, 87, 0.04);
+  background: rgba(248, 248, 254, 1);
+}
+
+.order-page .order-main-box .order-box-scroll {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 244px;
+  margin-top: 25px;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  overflow-y: scroll;
+}
+
+.order-page .order-main-box .order-box-scroll .orders-name-price {
+  position: relative;
+  width: 650px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+.order-page .order-main-box .orders-name-price .order-dish-img {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.order-page .order-main-box .orders-name-price .title-dish {
+  height: 36px;
+  font-family: Commissioner;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0%;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+}
+
+.order-page .order-main-box .orders-name-price .price-box {
+  width: 156px;
+  height: 27.57px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.order-page .order-main-box .orders-name-price .price-box p {
+  width: 39px;
+  height: 27px;
+  margin-right: 15px;
+  color: rgba(38, 38, 38, 0.88);
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.order-page .order-main-box .orders-name-price .price-box img {
+  width: 18px;
+  height: 17.36px;
+  margin-right: 15px;
+}
+
+.order-page .order-main-box .total-price-box {
+  width: 750px;
+  height: 36px;
+  display: flex;
+  margin-left: 40px;
+  margin-bottom: 17px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.order-page .order-main-box .total-price-box .box-total {
+  width: 434px;
+  height: 31px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.order-page .order-main-box .total-price-box .box-total .product-info {
+  margin-right: 15px;
+  font-family: Commissioner;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0%;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+}
+
+.order-page .order-main-box .total-price-box .box-total .product-info-price {
+  color: rgba(38, 38, 38, 1);
+
+  font-family: Commissioner;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.order-page .order-main-box .total-price-box .verify-button {
+  margin-left: 15px;
+}
+
+/* Order Right */
+
+.order-page .order-right {
+  width: 100%;
+  height: auto;
+  margin-left: 54px;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-page .order-right .order-info-box {
+  position: relative;
+  width: 375px;
+  height: 348px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+  box-shadow: 14px 14px 4px 0px rgba(188, 188, 191, 1),
+    inset 0px 0px 9px 14px rgba(211, 211, 231, 1),
+    inset 0px 4px 16px 0px rgba(242, 189, 87, 0.04);
+  background: rgba(248, 248, 254, 1);
+}
+
+.order-page .order-right .order-info-box .member-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-page .order-right .order-info-box .member-box .order-user-img {
+  position: relative;
+  width: 117px;
+  height: 112px;
+  margin-top: 39px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-page .order-right .order-info-box .order-user-img .order-user-avatar {
+  width: 117px;
+  height: 112px;
+  border-radius: 37px;
+}
+
+.order-page .order-right .order-info-box .order-user-img .order-user-icon-box {
+  position: absolute;
+  top: 90px;
+  left: 100px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 37px;
+  background: rgba(0, 0, 0, 0.33);
+}
+
+.order-page .order-right .order-info-box .order-user-img .order-user-prof-img {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.order-page .order-right .order-info-box .order-user-name {
+  width: 76px;
+  height: 37px;
+  margin-top: 10px;
+
+  font-family: Commissioner;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0%;
+  text-align: left;
+  color: rgba(8, 9, 13, 1);
+}
+
+.order-page .order-right .order-info-box .order-user-prof {
+  width: 76px;
+  height: 37px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Commissioner;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0%;
+  text-align: left;
+  color: rgba(161, 161, 161, 1);
+}
+
+.order-page .order-right .order-info-box .liner {
+  width: 332.59px;
+  margin-top: 40px;
+  margin-bottom: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(161, 161, 161, 1);
+}
+
+.order-page .order-right .order-info-box .order-user-address div {
+  position: absolute;
+  bottom: 19px;
+  left: 31px;
+}
+
+.order-page .order-right .order-info-box .order-user-address span {
+  position: absolute;
+  bottom: 19px;
+  left: 61px;
+  width: 255px;
+  margin-top: 11px;
+  color: rgba(0, 0, 0, 1);
+
+  font-family: DM Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.order-page .order-right .order-payment-info {
+  width: 372px;
+  height: 271px;
+  margin-top: 23px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+  box-shadow: 14px 14px 4px 0px rgba(188, 188, 191, 1),
+    inset 0px 0px 9px 14px rgba(211, 211, 231, 1),
+    inset 0px 4px 16px 0px rgba(242, 189, 87, 0.04);
+  background: rgba(248, 248, 254, 1);
+}
+
+.order-page .order-right .order-payment-info .order-card-number {
+  width: 332px;
+  height: 40px;
+  margin-top: 30px;
+  box-sizing: border-box;
+  border: 1px solid rgba(180, 170, 170, 1);
+  border-radius: 5px;
+  background: rgba(245, 245, 245, 1);
+}
+
+.order-page .order-right .order-payment-info span {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+
+  color: rgba(119, 119, 119, 1);
+
+  font-family: Commissioner;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.order-page .order-right .order-payment-info .order-card-info {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.order-page .order-right .order-payment-info .order-card-info .card-exp {
+  width: 162px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid rgba(180, 170, 170, 1);
+  border-radius: 5px;
+  background: rgba(245, 245, 245, 1);
+}
+
+.order-page .order-right .order-payment-info .order-card-info .card-cvv {
+  width: 162px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid rgba(180, 170, 170, 1);
+  border-radius: 5px;
+  background: rgba(245, 245, 245, 1);
+}
+
+.order-page .order-right .order-payment-info .order-card-holder {
+  width: 332px;
+  height: 40px;
+  margin-top: 30px;
+  box-sizing: border-box;
+  border: 1px solid rgba(180, 170, 170, 1);
+  border-radius: 5px;
+  background: rgba(245, 245, 245, 1);
+}
+
+.order-page .order-right .order-payment-info .order-card--types {
+  width: 243px;
+  height: 25.14px;
+  margin-top: 36px;
+  margin-bottom: 20px;
+  gap: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-page .order-right .order-payment-info .order-card--types img {
+  width: 38px;
+  height: 25.14px;
+}

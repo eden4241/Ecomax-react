@@ -1,84 +1,153 @@
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import { NavLink, useLocation } from "react-router-dom";
+import { Box, Button, Container, ListItemIcon, Menu, MenuItem, Stack } from "@mui/material";
+import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
+import { CartItem } from "../../../lib/types/search";
+import { useGlobals } from "../../hooks/useGlobals";
+import { serverApi } from "../../../lib/config";
+import { Logout } from "@mui/icons-material";
 
-export default function OtherNavbar() {
-    const authMember = null;
-    const location = useLocation();
-    const pageTitle = location.pathname === '/products' ? 'Shop' : location.pathname.split('/').pop() || 'Page';
+interface OtherNavbarProps {
+  cartItems: CartItem[];
+  onAdd: (item: CartItem) => void;
+  onRemove: (item: CartItem) => void;
+  onDelete: (item: CartItem) => void;
+  onDeleteAll: () => void;
+  setSignupOpen: (isOpen: boolean) => void;
+  setLoginOpen: (isOpen: boolean) => void;
+  handleLogoutClick: (e: React.MouseEvent<HTMLElement>) => void;
+  anchorEl: HTMLElement | null;
+  handleCloseLogout: () => void;
+  handleLogotRequest: () => void;
+}
 
-    return <div className="other-navbar">
-        <div className="navbar-top-section">
-            <Container sx={{ mt: "55px", height: "102px" }}>
-                <Stack
-                    sx={{ height: "102px" }}
-                    flexDirection={"row"}
-                    justifyContent={"space-between"}
-                    alignItems={"center"}>
-                    <NavLink to="/" className="logo-link">
-                        <Stack
-                            flexDirection={"row"}
-                            alignItems={"center"}
-                            spacing={2}
-                        >
-                            <Box>
-                                <img src="/icons/favicon.svg" alt="Ecomax Logo" />
-                            </Box>
-                            <Box className="ecomax-logo-text">
-                                Ecomax
-                            </Box>
-                        </Stack>
-                    </NavLink>
-                    <Stack
-                        flexDirection={"row"}
-                        justifyContent={"space-between"}
-                        minWidth={"700px"}
-                        alignItems={"center"}
-                    >
-                        <Box>
-                            <NavLink to="/" className="hover-line" activeClassName="underline">Home</NavLink>
-                        </Box>
-                        <Box>
-                            <NavLink to="/products" className="hover-line" activeClassName="underline">Products</NavLink>
-                        </Box>
-                        {authMember ? (
-                            <Box>
-                                <NavLink to="/orders" className="hover-line" activeClassName="underline">Orders</NavLink>
-                            </Box>
-                        ) : null}
-                        {authMember ? (
-                            <Box>
-                                <NavLink to="/member-page" className="hover-line" activeClassName="underline">My Page</NavLink>
-                            </Box>
-                        ) : null}
-                        <Box>
-                            <NavLink to="/help" className="hover-line" activeClassName="underline">Help</NavLink>
-                        </Box>
-                        <Basket />
-                        {!authMember ? (
-                            <Button variant="contained" className="login-button" >
-                                Login
-                            </Button>
-                        ) : (<img
-                            className="user-image"
-                            src="/icons/default-user.svg"
-                            alt="Default user"
-                            aria-haspopup={"true"} />)}
-                    </Stack>
-                </Stack>
-            </Container>
-        </div>
-        <div className="bottom-section">
-            <Container>
-                <Stack className="page-title-section" spacing={1}>
-                    <Typography className="page-title">
-                        {pageTitle}
-                    </Typography>
-                    <Typography className="breadcrumb">
-                        Home &gt; {pageTitle}
-                    </Typography>
-                </Stack>
-            </Container>
-        </div>
-    </div>;
+export default function OtherNavbar(props: OtherNavbarProps) {
+  const {
+    cartItems,
+    onAdd,
+    onDelete,
+    onDeleteAll,
+    onRemove,
+    setSignupOpen,
+    setLoginOpen,
+    handleCloseLogout,
+    handleLogoutClick,
+    handleLogotRequest,
+    anchorEl,
+  } = props;
+  const { authMember } = useGlobals();
+  return (
+    <div className="other-navbar">
+      <Container className="navbar-container">
+        <Stack className="menu">
+          <Box>
+            <NavLink to={"/"}>
+              <img className="brand-logo" src="/icons/burak.svg" />
+            </NavLink>
+          </Box>
+          <Stack className="links">
+            <Box className={"hover-line"}>
+              <NavLink to={"/"}>Home</NavLink>
+            </Box>
+            <Box className={"hover-line"}>
+              <NavLink to={"/products"} activeClassName={"underline"}>
+                Products
+              </NavLink>
+            </Box>
+            {authMember ? (
+              <Box className={"hover-line"}>
+                <NavLink to={"/orders"} activeClassName={"underline"}>
+                  Orders
+                </NavLink>
+              </Box>
+            ) : null}
+            {authMember ? (
+              <Box className={"hover-line"}>
+                <NavLink to={"/member-page"} activeClassName={"underline"}>
+                  My Page
+                </NavLink>
+              </Box>
+            ) : null}
+            <Box className={"hover-line"}>
+              <NavLink to={"/Help"} activeClassName={"underline"}>
+                Help
+              </NavLink>
+            </Box>
+            <Basket
+              cartItems={cartItems}
+              onAdd={onAdd}
+              onRemove={onRemove}
+              onDelete={onDelete}
+              onDeleteAll={onDeleteAll}
+            />
+
+            {!authMember ? (
+              <Box>
+                <Button
+                  variant="contained"
+                  className="login-button"
+                  onClick={() => setLoginOpen(true)}
+                >
+                  Login
+                </Button>
+              </Box>
+            ) : (
+              <img
+                className="user-avatar"
+                src={
+                  authMember?.memberImage
+                    ? `${serverApi}/${authMember?.memberImage}`
+                    : "/icons/default-user.svg"
+                }
+                aria-haspopup={"true"}
+                onClick={handleLogoutClick}
+              />
+            )}
+
+            <Menu
+              anchorEl={anchorEl}
+              id="account-menu"
+              open={Boolean(anchorEl)}
+              onClose={handleCloseLogout}
+              onClick={handleCloseLogout}
+              PaperProps={{
+                elevation: 0,
+                sx: {
+                  overflow: "visible",
+                  filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                  mt: 1.5,
+                  "& .MuiAvatar-root": {
+                    width: 32,
+                    height: 32,
+                    ml: -0.5,
+                    mr: 1,
+                  },
+                  "&:before": {
+                    content: '""',
+                    display: "block",
+                    position: "absolute",
+                    top: 0,
+                    right: 14,
+                    width: 10,
+                    height: 10,
+                    bgcolor: "background.paper",
+                    transform: "translateY(-50%) rotate(45deg)",
+                    zIndex: 0,
+                  },
+                },
+              }}
+              transformOrigin={{ horizontal: "right", vertical: "top" }}
+              anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+            >
+              <MenuItem onClick={handleLogotRequest}>
+                <ListItemIcon>
+                  <Logout fontSize="small" style={{ color: "blue" }} />
+                </ListItemIcon>
+                Logout
+              </MenuItem>
+            </Menu>
+          </Stack>
+        </Stack>
+      </Container>
+    </div>
+  );
 }
