@@ -10,36 +10,36 @@ import Divider from "../../components/divider";
 
 import { createSelector } from "reselect";
 import { useSelector } from "react-redux";
-import { retrieveNewDishes, retrievePopularDishes } from "./selector";
+import { retrieveNewProducts } from "./selector";
 import { Product } from "../../../lib/types/product";
 import { serverApi } from "../../../lib/config";
 import { ProductCollection } from "../../../lib/enums/product.enum";
 
 // Redux Slice & Selector
-const newDishesRetrivier = createSelector(retrieveNewDishes, (newDishes) => ({
-  newDishes,
+const newProductsRetrivier = createSelector(retrieveNewProducts, (newProducts) => ({
+  newProducts,
 }));
 
-export default function NewDishes() {
-  const { newDishes } = useSelector(newDishesRetrivier);
+export default function NewProducts() {
+  const { newProducts } = useSelector(newProductsRetrivier);
   return (
     <div className="new-products-frame">
       <Container>
         <Stack className="main">
-          <Box className="category-title">Fresh Menu</Box>
+          <Box className="category-title">New Products</Box>
           <Stack className="cards-frame">
             <CssVarsProvider>
-              {newDishes.length !== 0 ? (
-                newDishes.map((product: Product) => {
+              {newProducts.length !== 0 ? (
+                newProducts.map((product: Product) => {
                   const imagePath = `${serverApi}/${product.productImages[0]}`;
                   const sizeVolume =
-                    product.productCollection === ProductCollection.DRINK
+                    product.productCollection === ProductCollection.OTHER
                       ? product.productVolume + "l"
                       : product.productSize + " size";
                   return (
                     <Card key={product._id} variant="outlined" className="card">
                       <CardOverflow>
-                        <div className="product-sale">{sizeVolume}</div>
+                        {/* <div className="product-sale">{sizeVolume}</div> */}
                         <AspectRatio ratio="1">
                           <img src={imagePath} alt="" />
                         </AspectRatio>

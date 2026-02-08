@@ -80,9 +80,9 @@ export default function Basket(props: BasketProps) {
             viewBox="0 0 24 24"
             fill="none"
             stroke="#76a713"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <circle cx="9" cy="21" r="1"></circle>
             <circle cx="20" cy="21" r="1"></circle>

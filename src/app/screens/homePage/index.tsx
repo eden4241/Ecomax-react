@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
-import { Container } from "@mui/material";
 import Statistics from "./Statistics";
-import PopularDishes from "./PopularDishes";
-import NewDishes from "./NewDishes";
 import Advertisement from "./Advertisement";
 import ActiveUsers from "./ActiveUsers";
 import Events from "./Events";
@@ -15,6 +12,8 @@ import { ProductCollection } from "../../../lib/enums/product.enum";
 import "../../../css/home.css";
 import MemberService from "../../services/MemberService";
 import { Member } from "../../../lib/types/member";
+import PopularProducts from "./PopularProducts";
+import TrendingProducts from "./NewProducts";
 
 // Redux Slice & Selector
 const actionDispach = (dispatch: Dispatch) => ({
@@ -35,7 +34,7 @@ export default function HomePage() {
         page: 1,
         limit: 4,
         order: "productViews",
-        productCollection: ProductCollection.DISH,
+        productCollection: ProductCollection.FRUIT,
       })
       .then((data) => {
         setPopularDishes(data);
@@ -47,7 +46,7 @@ export default function HomePage() {
         page: 1,
         limit: 4,
         order: "createdAt",
-        productCollection: ProductCollection.DISH,
+        productCollection: ProductCollection.FRUIT,
       })
       .then((data) => {
         setNewDishes(data);
@@ -65,8 +64,8 @@ export default function HomePage() {
 
   return (
     <div className="homepage">
-      <PopularDishes />
-      <NewDishes />
+      <PopularProducts />
+      <TrendingProducts />
       <Advertisement />
       <ActiveUsers />
       <Statistics />
