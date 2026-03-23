@@ -73,8 +73,8 @@
 
 .products-page .products .avatar-big-box .search-box .single-button-search {
   padding: 12px 24px;
-  background: #2f2f31;
-  color: #d9c29c;
+  background: rgba(118, 167, 19, 1);
+  color: #ffffff;
   border-radius: 50px;
   border: none;
   cursor: pointer;
@@ -104,9 +104,11 @@
 }
 
 .products-page .products .dishes-filter-box .order {
-  width: 70px;
+  width: 80px;
   height: 36.5px;
   border-radius: 8px;
+  background: #76a713;
+  color: #ffffff;
 }
 
 .products-page .products .list-category-section {
@@ -134,20 +136,21 @@
 }
 
 .products-page .products .list-category-section .category-main button {
-  width: 26px;
-  height: 79px;
+  width: 126px;
+  height: 39px;
   border-radius: 10px;
-  writing-mode: vertical-lr;
+  /* writing-mode: vertical-lr;
   text-orientation: mixed;
-  transform: rotate(180deg);
+  transform: rotate(180deg); */
 }
 
 .products-page .products .list-category-section .product-wrapper {
   width: 100%;
   height: auto;
   margin-left: 60px;
-  gap: 30px;
+  gap: 50px;
   display: flex;
+  justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -171,7 +174,8 @@
   width: 263px;
   height: 275px;
   background-size: cover;
-  border-radius: 0px 50px 0px 0px;
+  border-radius: 20px;
+  border: 1px solid rgba(118, 167, 19, 1);
 }
 
 .products-page .products .product-wrapper .product-card .product-sale {
@@ -206,7 +210,7 @@
   transition: 0.3s ease;
   border: 1px solid rgba(227, 192, 141, 1);
   border-radius: 10px;
-  background: rgba(187, 47, 200, 0.78);
+  background: rgba(118, 167, 19, 1);
 }
 
 .products-page .products .product-wrapper .product-card .view-btn {
@@ -256,7 +260,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 146, 0, 1);
+  color: rgba(118, 167, 19, 1);
 }
 
 .products-page .products .product-wrapper .no-data {

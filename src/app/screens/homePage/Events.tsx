@@ -2,6 +2,7 @@ import { Box, Stack } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { plans } from "../../../lib/data/plans";
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 

@@ -1,5 +1,5 @@
-import { Box, Button, Container, ListItemIcon, Menu, MenuItem, Stack } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { Box, Button, Container, ListItemIcon, Menu, MenuItem, Stack, Typography } from "@mui/material";
+import { NavLink, useLocation } from "react-router-dom";
 import Basket from "./Basket";
 import { CartItem } from "../../../lib/types/search";
 import { useGlobals } from "../../hooks/useGlobals";
@@ -35,6 +35,17 @@ export default function OtherNavbar(props: OtherNavbarProps) {
     anchorEl,
   } = props;
   const { authMember } = useGlobals();
+  const location = useLocation();
+
+  const pageTitles: Record<string, string> = {
+    "/products": "Shop Page",
+    "/orders": "Orders Page",
+    "/member-page": "My Page",
+    "/help": "Help Page",
+    "/Help": "Help Page",
+  };
+  const currentPageTitle = pageTitles[location.pathname] ?? "Other";
+
   return (
     <div className="other-navbar">
       <Container className="navbar-container">
@@ -147,6 +158,11 @@ export default function OtherNavbar(props: OtherNavbarProps) {
               </MenuItem>
             </Menu>
           </Stack>
+        </Stack>
+        <Stack className="other-links">
+          <Typography component="span" className="page-title">
+            {currentPageTitle}
+          </Typography>
         </Stack>
       </Container>
     </div>

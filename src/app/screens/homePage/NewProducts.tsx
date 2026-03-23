@@ -37,7 +37,9 @@ export default function NewProducts() {
                       ? product.productVolume + "l"
                       : product.productSize + " size";
                   return (
-                    <Card key={product._id} variant="outlined" className="card">
+                    <Stack className="card-frame" flexDirection={"column"}
+                    >
+                      <Card key={product._id} variant="outlined" className="card">
                       <CardOverflow>
                         {/* <div className="product-sale">{sizeVolume}</div> */}
                         <AspectRatio ratio="1">
@@ -45,13 +47,15 @@ export default function NewProducts() {
                         </AspectRatio>
                       </CardOverflow>
 
-                      <CardOverflow variant="soft" className="product-detail">
+                      
+                    </Card>
+                    <Stack className="card-frame-info"><CardOverflow variant="soft" className="product-detail">
                         <Stack className="info">
-                          <Stack flexDirection={"row"}>
+                          <Stack flexDirection={"column"}>
                             <Typography className="title">
                               {product.productName}
                             </Typography>
-                            <Divider width="2" height="24" bg="#d9d9d9" />
+                            {/* <Divider width="24" height="2" bg="#d9d9d9" /> */}
                             <Typography className="price">
                               ${product.productPrice}
                             </Typography>
@@ -65,8 +69,9 @@ export default function NewProducts() {
                             </Typography>
                           </Stack>
                         </Stack>
-                      </CardOverflow>
-                    </Card>
+                      </CardOverflow></Stack>
+                    </Stack>
+                    
                   );
                 })
               ) : (

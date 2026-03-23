@@ -46,7 +46,7 @@ export default function Products(props: ProductsProps) {
   const { products } = useSelector(productsRetriever);
   const [productSearch, setProductSearch] = useState<ProductInquiry>({
     page: 1,
-    limit: 8,
+    limit: 6,
     order: "createdAt",
     productCollection: ProductCollection.FRUIT,
     search: "",
@@ -103,7 +103,7 @@ export default function Products(props: ProductsProps) {
         <Stack flexDirection={"column"} alignItems={"center"}>
           <Stack className="avatar-big-box">
             <Stack className="top-text">
-              <Box className="title-name">Burak Restaurant</Box>
+              <Box className="title-name">Ecomax</Box>
               <Stack className="search-box">
                 <TextField
                   id="outlined-basic"
@@ -224,7 +224,7 @@ export default function Products(props: ProductsProps) {
                     searchCollectionHandler(ProductCollection.VEGETABLE)
                   }
                 >
-                  Vegetable
+                  Veggies
                 </Button>
                 <Button
                   variant="contained"
@@ -262,7 +262,7 @@ export default function Products(props: ProductsProps) {
                           backgroundImage: `url(${imagePath})`,
                         }}
                       ></Stack>
-                      <div className="product-sale">{sizeVolume}</div>
+                      {/* <div className="product-sale">{sizeVolume}</div> */}
 
                       <Button
                         className="shop-btn"
@@ -341,7 +341,7 @@ export default function Products(props: ProductsProps) {
         </Stack>
       </Container>
 
-      <div className="brands-logo">
+      {/* <div className="brands-logo">
         <Container className="family-brands">
           <Box className="category-title">Our Family Brands</Box>
           <Stack className="brand-list">
@@ -359,7 +359,7 @@ export default function Products(props: ProductsProps) {
             </Box>
           </Stack>
         </Container>
-      </div>
+      </div> */}
 
       <div className="address">
         <Container>

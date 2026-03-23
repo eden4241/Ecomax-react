@@ -67,7 +67,7 @@ export default function HomePage() {
       <PopularProducts />
       <TrendingProducts />
       <Advertisement />
-      <ActiveUsers />
+      {/* <ActiveUsers /> */}
       <Statistics />
       <Events />
     </div>
